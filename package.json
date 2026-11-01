@@ -1,0 +1,60 @@
+{
+  "name": "@local/dsh-running",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "在 DSH 左侧栏新增「跑步」入口与页面：一期提供丹尼尔斯跑力（VDOT）反算与 E/M/T/I/R 五区训练配速。",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Okinging/dsh-running.git"
+  },
+  "homepage": "https://github.com/Okinging/dsh-running#readme",
+  "bugs": {
+    "url": "https://github.com/Okinging/dsh-running/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "running",
+    "vdot",
+    "daniels"
+  ],
+  "engines": {
+    "node": ">=22",
+    "dsh": "^0.2.1-rc.2"
+  },
+  "scripts": {
+    "test": "node tools/vdot-check.mjs && node tools/component-smoke.cjs"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/zh.json",
+    "locale/en.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  }
+}

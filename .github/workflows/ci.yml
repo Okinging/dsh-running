@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: VDOT 算法与 40 格公开表对拍
+        run: node tools/vdot-check.mjs
+
+      - name: 组件冒烟（React 钩子桩）
+        run: node tools/component-smoke.cjs
+
+      - name: 打包内容检查（不入库的文件不应进包）
+        run: npm pack --dry-run
