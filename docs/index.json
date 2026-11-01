@@ -1,0 +1,64 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Okinging's DSH plugins",
+    "zh": "Okinging 的 DSH 插件"
+  },
+  "description": {
+    "en": "Small, single-purpose plugins for DeepSeek Harness.",
+    "zh": "给 DeepSeek Harness 用的小而专的插件。"
+  },
+  "metadata": {
+    "categories": {
+      "running": {
+        "title": {
+          "en": "Running",
+          "zh": "跑步"
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "@local/dsh-running",
+      "title": {
+        "en": "Running",
+        "zh": "跑步"
+      },
+      "description": {
+        "en": "A Running page in the DSH sidebar: Daniels VDOT from a race result, with E/M/T/I/R training paces and equivalent times.",
+        "zh": "在 DSH 左侧栏新增「跑步」页面：用比赛成绩反算丹尼尔斯跑力（VDOT），给出 E/M/T/I/R 五区训练配速与等效成绩。"
+      },
+      "icon": "icon.svg",
+      "author": "Okinging",
+      "homepage": "https://github.com/Okinging/dsh-running#readme",
+      "repository": {
+        "url": "https://github.com/Okinging/dsh-running"
+      },
+      "metadata": {
+        "category": "running",
+        "keywords": [
+          "running",
+          "vdot",
+          "daniels",
+          "training-pace",
+          "race-time"
+        ]
+      },
+      "versions": [
+        {
+          "version": "1.0.0",
+          "publishTimestamp": 1793549253,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/Okinging/dsh-running",
+            "commit": "9f1d95bdc4fbe5b0af5b98cf512cf25b4643114f"
+          },
+          "engines": {
+            "dsh": "^0.2.1-rc.2"
+          }
+        }
+      ]
+    }
+  ]
+}
